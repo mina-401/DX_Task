@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="EngineInput.cpp" />
+    <ClCompile Include="EngineWindow.cpp" />
+    <ClCompile Include="EngineWinImage.cpp" />
+    <ClCompile Include="PreCompile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EngineInput.h" />
+    <ClInclude Include="EngineWindow.h" />
+    <ClInclude Include="EngineWinImage.h" />
+    <ClInclude Include="PreCompile.h" />
+  </ItemGroup>
+</Project>
