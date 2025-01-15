@@ -5,12 +5,11 @@
 #include <EngineCore/EngineSprite.h>
 #include <EngineCore/EngineShader.h>
 #include <EngineCore/EngineMaterial.h>
-#include "TitleGameMode.h"
-#include "TileMapGameMode.h"
+#include "TestGameMode.h"
+
 #include <EngineCore/HUD.h>
 #include <EngineCore/EngineGUI.h>
 #include <EngineCore/EngineGUIWindow.h>
-#include "TitleHUD.h"
 #include "ContentsEditorGUI.h"
 
 // #define은 그냥 무조건 복붙
@@ -35,18 +34,10 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 
 	MyGSetting();
 
+	UEngineCore::CreateLevel<ATestGameMode, APawn, AHUD>("TestLevel");
+	UEngineCore::OpenLevel("TestLevel");
 
-
-	// 주인공 APawn 상속 받으세요.
-	UEngineCore::CreateLevel<ATitleGameMode, APawn, ATitleHUD>("Titlelevel");
-	UEngineCore::CreateLevel<ATileMapGameMode, APawn, AHUD>("TileMapEditor");
-	UEngineCore::OpenLevel("Titlelevel");
-
-	UEngineGUI::AllWindowOff();
-
-	UEngineGUI::CreateGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
-	std::shared_ptr<UContentsEditorGUI> Window = UEngineGUI::FindGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
-	Window->SetActive(true);
+	
 }
 
 void UContentsCore::EngineTick(float _DeltaTime)

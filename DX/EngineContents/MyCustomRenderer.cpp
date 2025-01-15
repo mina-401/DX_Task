@@ -4,10 +4,10 @@
 MyCustomRenderer::MyCustomRenderer()
 {
 	CreateRenderUnit();
-	SetMesh("Rect");
+	SetMesh("Diamond");
 	SetMaterial("MyMaterial");
 
-	MyColor.Albedo = float4(1.0f, 1.0f, 1.0f, 1.0f);
+	//MyColor.Albedo = float4(255.0f, 0.0f, 255.0f, 1.0f);
 
 	GetRenderUnit().ConstantBufferLinkData("FMyColor", MyColor);
 }

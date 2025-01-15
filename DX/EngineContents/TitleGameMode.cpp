@@ -10,27 +10,27 @@
 #include <EngineCore/EngineCamera.h>
 #include "ContentsEditorGUI.h"
 
-class TestWindow : public UEngineGUIWindow
-{
-public:
-	void OnGUI() override
-	{
-		if (true == ImGui::Button("WindowButton"))
-		{
-			std::shared_ptr<AMonster> NewMonster = GetWorld()->SpawnActor<AMonster>();
-			NewMonster->SetActorLocation({ 300.0f, 200.0f, 0.0f });
-		}
-
-		if (true == ImGui::Button("FreeCameraOn"))
-		{
-			GetWorld()->GetMainCamera()->FreeCameraSwitch();
-		}
-
-		ImGui::SameLine(); // ÇÑ°£ ¶ç±â
-		ImGui::Text("test");
-
-	}
-};
+//class TestWindow : public UEngineGUIWindow
+//{
+//public:
+//	void OnGUI() override
+//	{
+//		if (true == ImGui::Button("WindowButton"))
+//		{
+//			std::shared_ptr<AMonster> NewMonster = GetWorld()->SpawnActor<AMonster>();
+//			NewMonster->SetActorLocation({ 300.0f, 200.0f, 0.0f });
+//		}
+//
+//		if (true == ImGui::Button("FreeCameraOn"))
+//		{
+//			GetWorld()->GetMainCamera()->FreeCameraSwitch();
+//		}
+//
+//		ImGui::SameLine(); // ÇÑ°£ ¶ç±â
+//		ImGui::Text("test");
+//
+//	}
+//};
 
 ATitleGameMode::ATitleGameMode()
 {
@@ -95,7 +95,7 @@ void ATitleGameMode::LevelChangeStart()
 		Window->SetActive(true);
 	}
 
-	{
+	/*{
 		std::shared_ptr<TestWindow> Window = UEngineGUI::FindGUIWindow<TestWindow>("TestWindow");
 
 		if (nullptr == Window)
@@ -104,5 +104,5 @@ void ATitleGameMode::LevelChangeStart()
 		}
 
 		Window->SetActive(true);
-	}
+	}*/
 }
