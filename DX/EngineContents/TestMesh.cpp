@@ -27,6 +27,6 @@ void ATestMesh::Tick(float _Delta)
 {
 	AActor::Tick(_Delta);
 
-	AddActorRotation({ 0,0,1 });
+	AddActorRotation({ 0,0,_Delta*100 });
 }
 
